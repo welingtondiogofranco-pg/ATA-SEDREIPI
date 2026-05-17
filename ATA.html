@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata SEDREIPI - UEPG</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f4f4;
+            color: #222;
+            line-height: 1.8;
+        }
+        .page {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 60px 80px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.10);
+        }
+
+        /* CABEÇALHO PADRONIZADO */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .header-logos {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 18px;
+        }
+        .header-logos img { height: 70px; width: auto; object-fit: contain; }
+
+        /* TÍTULOS */
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            color: #000;
+        }
+
+        /* CORPO DA ATA */
+        .ata-texto {
+            text-align: justify;
+            font-size: 16px;
+            text-indent: 50px;
+            margin-bottom: 30px;
+        }
+
+        /* CAMPOS EDITÁVEIS INLINE */
+        .editable {
+            display: inline-block;
+            border-bottom: 1px solid #000;
+            padding: 0 4px;
+            outline: none;
+            vertical-align: bottom;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            font-weight: bold;
+            color: #003366;
+        }
+        .editable:focus { background: #eef5ff; border-bottom: 2px solid #003366; }
+        .editable:empty::before {
+            content: attr(data-placeholder);
+            color: #999;
+            font-style: italic;
+            font-weight: normal;
+            pointer-events: none;
+        }
+        
+        .small { min-width: 50px; text-align: center; }
+        .medium { min-width: 180px; }
+        .large { min-width: 320px; }
+
+        /* AVISO DE PREENCHIMENTO */
+        .ajuda {
+            margin: 15px 0 25px 0;
+            font-size: 13px;
+            color: #555;
+            background: #f5f7fb;
+            border-left: 4px solid #003366;
+            padding: 10px 14px;
+            border-radius: 6px;
+            text-indent: 0;
+        }
+
+        /* DATA */
+        .data-local {
+            text-align: right;
+            font-size: 16px;
+            margin-top: 50px;
+            margin-bottom: 60px;
+        }
+
+        /* ASSINATURAS DA BANCA (ALINHADAS À ESQUERDA) */
+        .banca-titulo {
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border-left: 4px solid #003366;
+            padding-left: 10px;
+        }
+        .signature-left {
+            margin-top: 20px;
+        }
+        .signature-item {
+            margin-bottom: 45px;
+        }
+        .signature-line {
+            display: inline-block;
+            width: 80%;               /* linha larga para assinatura digital */
+            border-top: 1px solid #000;
+            margin-bottom: 6px;
+        }
+        .signature-role {
+            font-size: 14px;
+            color: #555;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline;
+        }
+
+        /* CONFIGURAÇÃO DE IMPRESSÃO */
+        @media print {
+            body { background: #fff; margin: 0; }
+            .page { box-shadow: none; max-width: 100%; padding: 20mm; }
+            .editable:empty::before { content: ""; }
+            .editable { border-bottom: 1px solid transparent; color: #000; }
+            .ajuda { background: #fff; border-left: 1px solid #000; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <div class="header">
+        <div class="header-logos">
+            <img src="secijur.png" alt="SECIJUR"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span style="display:none; height:70px; line-height:70px; font-weight:bold; color:#003366;">[SECIJUR]</span>
+
+            <img src="UEPG.jpg" alt="UEPG"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span style="display:none; height:70px; line-height:70px; font-weight:bold; color:#003366;">[UEPG]</span>
+
+            <img src="ceppodi.png" alt="CEPPODI"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span style="display:none; height:70px; line-height:70px; font-weight:bold; color:#003366;">[CEPPODI]</span>
+        </div>
+    </div>
+
+    <!-- TÍTULO COM NÚMERO DO SEDREIPI EDITÁVEL -->
+    <h1>
+        ATA DO SEMINÁRIO DIALÓGICO SOBRE RESULTADOS DE ESTÁGIO<br>
+        DE IMERSÃO PRÁTICO-INSTITUCIONAL (<span class="editable small" contenteditable="true" data-placeholder="Nº"></span>º SEDREIPI)
+    </h1>
+
+    <div class="ata-texto">
+        Aos <span class="editable small" contenteditable="true" data-placeholder="dias"></span> dias do mês de 
+        <span class="editable medium" contenteditable="true" data-placeholder="mês"></span> do ano de 
+        <span class="editable small" contenteditable="true" data-placeholder="ano"></span>, foi realizada, por 
+        videoconferência através do link 
+        <span class="editable large" contenteditable="true" data-placeholder="https://meet.google.com/xxx-xxxx-xxx"></span>, 
+        com início às <span class="editable small" contenteditable="true" data-placeholder="00:00"></span> horas, a Exposição do relatório de atividades de imersão prático-institucional efetuadas junto ao 
+        <span class="editable large" contenteditable="true" data-placeholder="Nome da Instituição de destino"></span> pelo Mestrando 
+        <span class="editable large" contenteditable="true" data-placeholder="Nome Completo do Mestrando"></span>, como parte dos requisitos para a obtenção do título de Mestre pelo Programa de Pós-Graduação em Direito - Mestrado Profissional pela UEPG.
+    </div>
+
+    <div class="ata-texto">
+        A Banca foi constituída pelos seguintes membros: 
+        <span class="editable medium" contenteditable="true" data-placeholder="Nome do Presidente"></span>, 
+        <span class="editable medium" contenteditable="true" data-placeholder="Nome do Avaliador 1"></span> e 
+        <span class="editable medium" contenteditable="true" data-placeholder="Nome do Avaliador 2"></span>, na qualidade de avaliadores. Estiveram também presentes como ouvintes os mestrandos 
+        <span class="editable large" contenteditable="true" data-placeholder="Nomes dos ouvintes"></span> _____.
+    </div>
+
+    <!-- RESULTADO EDITÁVEL COM AVISO -->
+    <div class="ata-texto">
+        Após avaliadas as atividades e efetuadas as arguições acerca do relatório apresentado, a banca examinadora deliberou por considerar o estágio de imersão 
+        <span class="editable medium" contenteditable="true" data-placeholder="[SUFICIENTE / INSUFICIENTE]"></span> 
+        e o relatório 
+        <span class="editable medium" contenteditable="true" data-placeholder="[APROVADO / REPROVADO]"></span>.
+    </div>
+    <div class="ajuda">
+        ⚠️ <strong>Atenção:</strong> Preencha o resultado conforme a deliberação da banca examinadora. Utilize "SUFICIENTE" ou "INSUFICIENTE" para o estágio e "APROVADO" ou "REPROVADO" para o relatório.
+    </div>
+
+    <div class="ata-texto">
+        Nada mais havendo a constar, lavrou-se o presente registro, que segue assinado pela Banca Examinadora.
+    </div>
+
+    <div class="data-local">
+        Ponta Grossa, <span class="editable small" contenteditable="true" data-placeholder="dia"></span> de 
+        <span class="editable medium" contenteditable="true" data-placeholder="mês"></span> de 
+        <span class="editable small" contenteditable="true" data-placeholder="ano"></span>.
+    </div>
+
+    <!-- ASSINATURAS ALINHADAS À ESQUERDA, UMA ABAIXO DA OUTRA -->
+    <div class="signature-left">
+        <div class="banca-titulo">Membros da Banca Examinadora:</div>
+        
+        <div class="signature-item">
+            <span class="signature-line"></span>
+            <span class="signature-role"> – Presidente</span>
+        </div>
+
+        <div class="signature-item">
+            <span class="signature-line"></span>
+            <span class="signature-role"> – Membro Avaliador</span>
+        </div>
+
+        <div class="signature-item">
+            <span class="signature-line"></span>
+            <span class="signature-role"> – Membro Avaliador</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
